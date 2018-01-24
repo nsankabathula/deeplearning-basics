@@ -25,6 +25,7 @@ train = optimizer.minimize(loss);
 init = tf.global_variables_initializer();
 
 with tf.Session() as sess:
+    File_Writer = tf.summary.FileWriter('C:\\Users\\nsankabathula\\PycharmProjects\\Basics\\graph', sess.graph);
     sess.run(init);
     #print(sess.run(loss,{input:[1,2,3,4], actual_output:[0,-1,-2,-3]}));
     for i in range (2000):
