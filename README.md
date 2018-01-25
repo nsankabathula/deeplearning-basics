@@ -1,4 +1,4 @@
-# Tensorflow-basics
+# Deep Learning Basics
 
 Editor PyCharm 2017.3.3 (Community Edition)
 
