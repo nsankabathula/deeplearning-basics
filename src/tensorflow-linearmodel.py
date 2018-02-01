@@ -1,14 +1,14 @@
 import tensorflow as tf;
 
 # Model
-Weight = tf.Variable([.1], tf.float32);
+weight = tf.Variable([.1], tf.float32);
 bias = tf.Variable([-.1], tf.float32);
 
 #Input
 input = tf.placeholder(tf.float32);
 
 #Predected Output
-output_model = Weight * input + bias;
+output_model = weight * input + bias;
 
 #Actual Output
 actual_output = tf.placeholder(tf.float32);
@@ -28,9 +28,9 @@ with tf.Session() as sess:
     File_Writer = tf.summary.FileWriter('C:\\Users\\nsankabathula\\PycharmProjects\\Basics\\graph', sess.graph);
     sess.run(init);
     #print(sess.run(loss,{input:[1,2,3,4], actual_output:[0,-1,-2,-3]}));
-    for i in range (2000):
+    for i in range (500):
         sess.run(train, {input: [1, 2, 3, 4], actual_output: [0, -1, -2, -3]});
-        print (i, sess.run([Weight, bias]));
+        print (i, sess.run([weight, bias]));
 
     #print(sess.run([Weight, bias]));
 
