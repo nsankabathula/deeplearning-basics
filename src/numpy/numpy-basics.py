@@ -43,3 +43,9 @@ for x in np.nditer(a, op_flags=['readwrite']):
     x[...] = 2*x + 3;
 
 print ('Modify A\n', a);
+
+
+x =  np.linspace(-2*np.pi, 2*np.pi, 100);
+xx = x + 1j * x[:, np.newaxis];
+
+print (xx);

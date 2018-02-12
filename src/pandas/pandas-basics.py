@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 data = {'Name':['Tom', 'Jack', 'Steve', 'Ricky'],'Age':[28,34,29,42]}
 df = pd.DataFrame(data)
@@ -327,3 +328,46 @@ print ('Solution: \n', df);
 
 
 print ("\n=======================End=====================\n ")
+
+
+PATH="C:\\Users\\nsankabathula\\Downloads\\Zip_Zri_AllHomesPlusMultifamily.csv"
+table_names = ['zillow']
+tables_data = [pd.read_csv(PATH, low_memory=False) for fname in table_names];
+
+for t in tables_data: print(t.head())
+
+tbl_data = tables_data[0]
+
+print ('Count', tbl_data.count())
+
+print ('Sum:', tbl_data.sum())
+
+print ('SD:', tbl_data.std())
+
+#print ('Summary:', tbl_data.describe(include='all'))
+
+summary = tbl_data.describe(include='all')
+grouped = tbl_data.groupby('State');
+
+ny_indexs = np.where(tbl_data['State']=='NY')
+
+print (ny_indexs);
+
+ny_data =tbl_data.iloc[ny_indexs][['City','RegionName','SizeRank','2017-01','2017-02','2017-03','2017-04','2017-05','2017-06','2017-07','2017-08','2017-09','2017-10','2017-11','2017-12']]
+print (ny_data);
+
+#df[:3][['name','score']]
+x_axis = ny_data.loc[150:,['SizeRank']]['SizeRank'].values;
+y_axis = ny_data.loc[150:,['City']]['City'].values;
+#y_axis = np.array(['2017-01','2017-02','2017-03','2017-04','2017-05','2017-06','2017-07','2017-08','2017-09','2017-10','2017-11','2017-12']);
+
+#print (y_axis['RegionName'].values);
+#print (x_axis['SizeRank'].values);
+
+#plt.plot(y_axis, x_axis)
+# Show the plot
+#plt.show()
+
+#plt.plot(x_axis, ['2017-01']);
+#plt.legend()
+#plt.show();
