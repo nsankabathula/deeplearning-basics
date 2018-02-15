@@ -1,0 +1,7 @@
+.idea
+TensorFlow.egg-info
+build
+dist
+graph
+venv
+src/udacity/.ipynb_checkpoints/
