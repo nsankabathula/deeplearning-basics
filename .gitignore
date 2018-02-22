@@ -1,7 +1,9 @@
 .idea
+.ipynb_checkpoints
 TensorFlow.egg-info
 build
 dist
 graph
 venv
 src/udacity/.ipynb_checkpoints/
+src/imdb/data/*.tsv
