@@ -236,4 +236,4 @@ def readFile(file, nrows=None ):
     return df
     
 crew = readFile('title.crew.tsv', 10)
-crew.head()
+print (crew)
